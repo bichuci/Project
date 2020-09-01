@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h2 class="text-center">voici les cours de {{contributor.getUser.getnickname}}</h2>
+    <div class="container mb-3 d-flex flex-wrap">
+        {% for course in courses %}
+        <div class="card mr-2 mb-2" style="width: 18rem;">
+            <div class="card-header  text-white text-uppercase {{ course.fileName == null ? 'invisible' : ''}}"><i class="fa fa-list"></i>{{course.name}}</div>
+            <img src="{{ asset( 'images/cour/' ~ course.fileName ) }}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{course.categories}}</h5>
+                <p class="card-text">{{course.description}}</p>
+                <p class="card-text">{{course.numberView}}</p>
+                <a href="{{ path('course', {id:course.id}) }}" class="btn btn-primary">Voir Le Cour</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

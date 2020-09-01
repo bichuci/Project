@@ -1,0 +1,882 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+#body{
+text-decoration: none;
+font-family: 'Roboto Condensed', sans-serif;
+}
+
+#fullnav{
+  display: flex;
+  margin-top: 10px;
+  font-size: 20px;
+}
+.right button
+{
+  margin : auto 5px;
+  
+}
+.right ul
+{
+  width:100%;
+  margin:0 auto;
+}
+#leftbtn
+{
+  background-color: white;
+  color:#007bff;
+  box-shadow: 5px 5px 5px #007bff;
+}
+#leftbtn:hover
+{
+  background-color: whitesmoke;
+}
+#rightbtn
+{
+  box-shadow: 5px 5px 5px grey;
+}
+
+.left{
+display: flex;
+flex: auto;
+justify-content: center;
+}
+
+.left a{
+margin-right: 65px;
+}
+
+.right{
+display: flex;
+flex: auto;
+justify-content: flex-end;
+text-transform: uppercase;
+font-weight: bold;  
+margin-right: 10px;
+
+}
+
+.right a{
+border:  solid  #4682B4;
+border-radius: 5px 5px 5px 5px;
+padding: 5px;
+margin: 3px;
+color: #4682B4;
+
+}
+
+.right #sign{
+background-color: #4682B4;
+color: white;
+}
+
+#searchbar{
+display: flex;
+justify-content: center;
+align-content: center;
+align-items: center;
+align-self: center;
+justify-content: center;
+margin-bottom: 35px;
+}
+
+#searchbar form{
+  display: flex;
+  justify-content: center;
+}
+
+#searchbar input{
+margin: 0 0 1em 0;
+
+}
+
+#logo{
+  height: 75px;
+}
+
+
+#PresentationDuSite {
+  margin-left: auto;
+  margin-right: auto;
+  height: 420px;
+  width: 500px;
+  margin-top: 30px;
+}
+
+.chat{
+  position: relative;
+  top: 0%;
+  left: 85%;
+  width: 200px;
+}
+
+#footer {
+  display: flex;
+  justify-content: center;
+  background-color: lightgray;
+  padding-top: 20px;
+
+}
+
+.logo{
+  width:50px;
+  height:50px;
+}
+.fourth ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.fourth li:first-child{
+  font-style: bold;
+}
+
+li{
+  list-style-type: none;
+}
+.fourth li{
+  padding: 1em;
+}
+.fourth
+{
+  width:30%;
+}
+.third
+{
+  width:30%;
+}
+.first
+{
+  width:30%;
+}
+
+.social img{
+width: 30px;
+height: 30px;
+}
+
+.first, .second, .third, .fourth {
+      flex: auto;
+      text-align: center;
+
+}
+
+.contact{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.contact img{
+width: 30px;
+height: 30px;
+}
+
+h3{
+font-weight: bold;
+font-size: 20px;
+}
+
+body, input, button {
+font-family: Ubuntu, sans-serif;
+}
+
+header {
+text-align: center;
+}
+
+.messages {
+background-color: steelblue;
+border-radius: 5px;
+padding: 1em;
+height: 50vh;
+overflow: auto;
+}
+
+.message {
+color: white;
+padding: 0.3em;
+}
+
+.date, .author {
+font-weight: bold;
+}
+
+form {
+display: flex;
+margin-top: 1em;
+justify-content: space-between;
+}
+
+input, button {
+padding: 0.5em;
+}
+
+input {
+margin-right: 10px;
+}
+
+#author {
+width: 20%;
+}
+
+#content {
+width: 60%;
+}
+
+button[type="submit"]{
+width: 20%;
+}
+
+/* Fin base Twig */
+
+/* Debut index */
+
+#section{
+background-color: #4682B4;
+color: white;
+height: 300px;
+display: flex;
+justify-content: center;
+align-self: center;
+align-items: center;
+flex-direction: column; 
+}
+
+#section2 h2{
+width:60%;
+display: flex;
+justify-content: center;
+margin:15px auto;
+color: #4682B4;
+font-weight: bold;
+}
+
+#section2 .container ul{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  font-weight: bold;
+  margin-bottom: 40px;
+  
+}
+
+#section2 .container ul li{
+display: flex;
+flex-direction: column-reverse;
+padding: 20px;
+border-bottom:    #4682B4 dotted ;
+
+}
+
+#section2 img{
+display: flex;
+height: 40px;
+width: 40px;
+align-self: center;
+}
+
+#section3 h3{
+width:60%;
+margin:15px auto;
+display: flex;
+justify-content: center;
+
+color: #4682B4;
+}
+#section3 .li1
+{
+  width:30%;
+  margin:15px 0;
+}
+#section3 .li2
+{
+  width:30%;
+  margin:15px 0;
+}
+#section3 .li3
+{
+  width:30%;
+  margin:15px 0;
+}
+#section3 .container3 ul{
+display: flex;
+justify-content: space-between;
+padding:10px;
+font-weight: bold;
+text-align: center;
+}
+
+#section3 p
+{
+  margin: 15px 0;
+  color:#4682B4;
+  font-size: smaller;
+}
+
+.container3 ul li{
+font-size: 20px;
+padding-bottom: 5px;
+}
+
+.container3 ul li{
+  font-size: 20px;
+  padding-bottom: 5px;
+}
+/* Style de l'inscription */
+
+.register
+{
+width : 40%;
+margin: 0 auto;
+}
+.register form
+{
+display: flex;
+flex-direction: column;
+}
+
+.register h1
+{
+display: flex;
+justify-content: center;
+font-weight: bold;
+}
+.register form button
+{
+margin: 0 auto;
+}
+.register form div
+{
+margin: 0 auto;
+}
+.register label
+{
+display: flex;
+justify-content: center;
+margin: 5px 0;
+}
+
+/* Style du login */
+
+.login
+{
+width: 40%;
+margin: 0 auto;
+display: flex;
+flex-wrap: wrap;
+flex-direction: column;
+}
+.login #checkbox
+{
+  width: 40%;
+  margin: 0 auto;
+  display:flex;
+  justify-content: center;
+}
+.forgotLink 
+{
+  width:40%;
+  margin : 0 auto;  
+  display: flex;
+  justify-content: center;
+}
+.login h1
+{
+font-size: 40px;
+margin: 5px auto;
+}
+
+.login a
+{
+margin: 5px auto;
+}
+.login button
+{
+margin: 5px auto;
+}
+.login p
+{
+margin: 5px auto;
+}
+.login input
+{
+width:40%;
+margin: 0 auto;
+
+}
+.login label
+{
+width:40%;
+margin : 5px auto;
+}
+
+
+/* Style du mdp oublié */
+
+.forgotten
+{
+width: 40%;
+margin: 0 auto;
+display: flex;
+flex-wrap: wrap;
+flex-direction: column;
+}
+.forgotten h1
+{
+margin: 5px auto;
+font-size: 40px;
+font-weight: bold;
+}
+.forgotten button
+{
+margin: 5px auto;
+}
+.forgotten input
+{
+width: 40%;
+margin: 0 auto;
+}
+.forgotten p
+{
+margin: 5px auto;
+}
+
+/* Style du reset password */
+
+.reset
+{
+width: 40%;
+margin: 0 auto;
+display: flex;
+flex-wrap: wrap;
+flex-direction: column;
+}
+.reset h1
+{
+font-weight: bold;
+font-size: 40px;
+margin: 5px auto;
+}
+
+.reset button
+{
+margin: 5px auto;
+}
+.reset input
+{
+width: 40%;
+margin:0 auto;
+
+}
+
+#section3 li{
+font-weight: bold;
+text-align: center;
+}
+
+#section4{
+  display: flex;
+  justify-content: center;
+    margin-bottom: 25px;
+}
+
+#section4 h3{
+  margin-top: 25px;
+  color: #4682B4;
+  margin-bottom: 25px;
+}
+
+#section4{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  
+}
+
+#section4 a{
+  color: white;
+  background-color: #4682B4;
+  border-radius: 5px 5px 5px 5px;
+  padding: 5px;
+  margin: 3px;
+}
+/* -------- Page Profil ---------- */
+
+#usercourses{
+display: flex;
+flex-direction: row;
+justify-content: center;
+}
+#usercourses .card-header{
+background-color:#4682b4;
+}
+#usercourses .card-body p:first-child{
+font-weight: bold;
+}
+
+#courssuivi{
+  width:30%;
+  height: 100%;
+}
+#lastcourses{
+display: flex;
+flex-direction: row;
+justify-content: center;
+}
+#lastcourses .card-header{
+background-color:#4682b4;
+}
+#lastcourses .card-body p:first-child{
+font-weight: bold;
+}
+/* -----------------Affichage du chat ------------------- */
+#buttonchat{
+  position: fixed;
+  display: block;
+  bottom:30px;
+  right: 30px;
+}
+.chat{
+  width:700px;
+  left: 0.1em;
+}
+#author{
+  display: flex;
+  align-items: center;
+  color:grey;
+  border: 1px solid;
+  border-color: lightgrey;
+  margin-right: 1em;
+  justify-content: center;
+  background-color: white;
+}
+
+/* Style contributeur */
+#contrib h2{
+  display:flex;
+  justify-content: center;
+  color: #4682b4;
+}
+#contrib p 
+{
+  display:flex;
+  justify-content: center;
+}
+#contrib button 
+{
+  margin: 5px auto;
+  display: flex;
+  justify-content: center;
+}
+#liste
+{
+  color: #4682b4;
+}
+
+/* Style User*/
+#profil 
+{
+  display:flex;
+  justify-content: center;
+}
+#profil button{
+  width: 60%;
+ 
+  box-shadow: 5px 5px 5px grey;
+  margin-bottom: 15px;
+}
+/*------------ Responsive design ------------ */
+@media screen and (max-width: 1000px) {
+
+  #fullnav{
+    width:100%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  #fullnav .right{
+    width: 60%;
+    display:flex;
+    justify-content: center; 
+  }
+  #fullnav .right:last-child{
+  
+    align-items: center;  
+  }
+  #fullnav .left{
+    width:60%;
+    display:flex;
+    flex-direction: column;
+  }
+  .left a{
+    width:100%;
+  }
+  .container3 ul{
+    width:100%;
+    flex-direction: column;
+    text-align: center;
+  }
+  .container3 ul li{
+    width:100%;
+    display:flex;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  #section3 ul
+  {
+    width:100%;
+    align-items: center;
+  }
+  #section4 a{
+    display: flex;
+    justify-content: center;
+  }
+  #footer{
+    align-items: center;
+    flex-direction: column;
+  }
+  #leftbtn
+  {
+    width:100%;
+    background-color: white;
+    color:#007bff;
+    box-shadow: 5px 5px 5px #007bff;
+    display: flex;
+    justify-content: center;
+    
+  }
+  #rightbtn
+  {
+    margin-top: 5px;
+    width:100%;
+    box-shadow: 5px 5px 5px grey;
+    
+    
+  }
+  .right
+  {
+    width:100%;
+  }
+
+  /* Style du login */
+
+.login
+{
+width: 100%;
+margin: 0 auto;
+display: flex;
+flex-wrap: wrap;
+flex-direction: column;
+}
+.login #checkbox
+{
+  width: 100%;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.forgotLink 
+{
+  width: 100%; 
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+.login h1
+{
+  width: 100%;
+font-size: 40px;
+margin: 5px auto;
+display:flex;
+justify-content: center
+}
+
+.login a
+{
+  width: 100%;
+margin: 5px auto;
+display:flex;
+justify-content: center
+}
+.login button
+{
+  width: 60%;
+margin: 5px auto;
+}
+.login p
+{
+  width: 100%;
+margin: 5px auto;
+display:flex;
+justify-content: center;
+}
+
+.login label
+{
+width: 60%;
+margin : 5px auto;
+display:flex;
+justify-content: center
+}
+
+/* Style Respônsive register*/
+.register
+{
+width : 40%;
+margin: 0 auto;
+}
+.register form
+{
+display: flex;
+flex-direction: column;
+}
+
+
+
+.register h1
+{
+  width:100%;
+display: flex;
+justify-content: center;
+font-weight: bold;
+}
+.register form button
+{
+margin: 0 auto;
+}
+.register form div
+{
+margin: 0 auto;
+}
+.register label
+{
+  width:100%;
+  display: flex;
+  justify-content: center;
+  margin: 5px auto;
+  text-align: center;
+}
+
+/* Style du mdp oublié */
+
+.forgotten
+{
+width: 100%;
+margin: 0 auto;
+display: flex;
+flex-wrap: wrap;
+flex-direction: column;
+}
+.forgotten h1
+{
+margin: 5px auto;
+font-size: 40px;
+font-weight: bold;
+text-align: center;
+}
+.forgotten button
+{
+  width:60%;
+margin: 5px auto;
+}
+.forgotten input
+{
+width: 40%;
+margin: 0 auto;
+}
+.forgotten p
+{
+margin: 5px auto;
+}
+
+/* Style du reset password */
+
+.reset
+{
+width: 100%;
+margin: 0 auto;
+display :flex;
+justify-content:center;
+}
+.reset h1
+{
+width:60%; 
+font-weight: bold;
+font-size: 40px;
+display:flex;
+text-align: center;
+justify-content: center;
+margin: 5px auto;
+}
+
+.reset button
+{
+  width:60%;
+margin: 5px auto;
+}
+.reset input
+{
+width: 40%;
+margin:0 auto;
+}
+
+#section2 h2
+{
+  width:60%;
+}
+#section2 ul{
+  width:100%;
+  display:flex;
+  justify-content: center;
+}
+#section2 ul li
+{
+  width:30%;
+  display:flex;
+  justify-content: center;
+  text-align: center;
+}
+#section2 .container
+{
+  width:100%;
+  text-align: center;
+}
+#section2 p 
+{
+  width:100%;
+  display:flex;
+  justify-content: center;
+  text-align: center;
+}
+#section h1
+{
+  width:100%;
+  text-align: center;
+}
+#section p
+{
+  text-align: center;
+}
+ /* style contributeur*/
+ 
+ #contrib h2
+ {
+    text-align: center;
+ }
+ #contrib p
+ {
+   text-align: center;
+ }
+ #contrib button
+ {
+   width:60%;
+   margin: 5px auto;
+ }
+ .container{
+   text-align: center;
+ }
+}

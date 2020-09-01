@@ -1,0 +1,8 @@
+.case {
+    height: 100px;
+    width: 100%;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 60px;
+    cursor: pointer;
+}

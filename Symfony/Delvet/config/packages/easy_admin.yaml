@@ -1,0 +1,21 @@
+easy_admin:
+    design: 
+        menu:
+            - { entity: Courses }
+            - { entity: User, permission: ROLE_ADMIN }
+            - { entity: Categories, permission: ROLE_ADMIN }
+    site_name: 'Delvet Manager'
+    entities:
+        Courses:
+            class : App\Entity\Courses
+            form:
+                fields:
+                    - { property : name}
+                    - { property : description }
+                    - { property : content , type : fos_ckeditor, type_options: { config_name: my_config } }
+                    - { property : image, type : file}
+                    - { property : categories}
+        User:
+            class:  App\Entity\User
+        Categories:
+            class: App\Entity\Categories

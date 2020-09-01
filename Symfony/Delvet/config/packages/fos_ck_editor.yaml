@@ -1,0 +1,5 @@
+fos_ck_editor:
+    default_config: my_config
+    configs:
+        my_config:
+            toolbar: full

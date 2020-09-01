@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+{% block title %}tout nos cours{% endblock %}
+{% block body  %}
+    <div class="container " >
+      <div class="card bg-light mb-3" style="width: 18rem; ">
+            <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i> {{ categorie.name }}</div>
+                <ul class="list-group category_block">
+                        
+                    
+                         {# <li class="list-group-item">
+                            <a href="{{ path('categorieCour', {slug:categorie.slug}) }}">{{ categorie.name }}</a>
+                                
+                        </li> #}
+                   
+                 </ul>
+            </div>
+        </div> 
+                
+    </div>
+
+
+<div class="container d-flex">
+{% for course in courses %}
+
+    <div class="card d-flex mr-2 mb-2" style="width: 18rem;">
+    <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i>{{course.name}}</div>
+    <img src="{{ asset( 'images/cour/' ~ course.fileName ) }}" class="card-img-top" >
+    <div class="card-body">
+        <h5 class="card-title">{{course.categories.name}}</h5>
+        <p class="card-text">{{course.description}}</p>
+        <p class="card-text text-center">nombres de vues {{course.numberView}}
+        <a  class="btn btn-primary" href="{{ path('course', {id:course.id}) }}">Voir le cours</a>
+        {# {{ path('categorieCour', {id:course.id}) }} #}
+    </div>
+    </div>
+
+{% endfor %}
+</div>
+
+
+<div class="col-12 d-flex justify-content-center">
+    <nav aria-label="...">
+        <ul class="pagination">
+         {% if current_page != 1 %}
+            <li class="page-item">
+                 <a class="page-link" href="{{ path('categorieCour', {slug: categorie.slug},{page:current_page - 1 }) }}">Précédent</a>
+            </li>
+          {% endif %}  
+             
+             {% for page in 1..max_pages %}
+                <li class="page-item {{ (page == current_page) ? 'active' : '' }}">
+                    <a class="page-link" href="{{ path('categorieCour', {slug: categorie.slug},{page: page}) }}">{{ page }}</a>
+                </li>
+             {% endfor %}
+        
+        {% if current_page != max_pages %}
+            <li class="page-item">
+                  <a class="page-link" href="{{ path('categorieCour', {slug: categorie.slug},{page: current_page + 1}) }}">Suivant</a>
+            </li>
+        {% endif %}
+        </ul>
+     </nav>
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Courses index{% endblock %}
+
+{% block body %}
+    <h1>Courses index</h1>
+ 
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Image</th>
+                <th>Date_create</th>
+                <th>Description</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for course in courses %}
+            <tr>
+                <td>{{ course.id }}</td>
+                <td>{{ course.name }}</td>
+                <td>{{ course.image }}</td>
+                <td>{{ course.dateCreate ? course.dateCreate|date('Y-m-d') : '' }}</td>
+                <td>{{ course.description }}</td>
+                <td>
+                    <a href="{{ path('courses_show', {'id': course.id}) }} " class="btn btn-info">show</a>
+                    <a href="{{ path('courses_edit', {'id': course.id}) }}" class="btn btn-primary">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('courses_new') }}" class="btn btn-success">Create new</a>
+{% endblock %}

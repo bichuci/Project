@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+{% block title %}tout nos cours{% endblock %}
+{% block body  %}
+    <div class="container " >
+      <div class="card bg-light mb-3" style="width: 18em; ">
+            <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i> Catégories</div>
+                <ul class="list-group category_block">
+                        
+                    {% set slugcat =  (null != course.categories  ? course.categories.slug : '')    %}
+                         <li class="list-group-item">
+                            <a href="{{ path('categorieCour', {slug:(null != course.categories  ? course.categories.slug : '')}) }}">{{ null != course.categories  ? course.categories.name : ''  }}</a>
+                                {# {{ path('categorieCour', {slug: slugcat}) }} #}
+                        </li>
+                   
+                 </ul>
+            </div>
+        </div> 
+                
+    </div>
+
+
+<div class=" container d-flex flex-wrap"  >
+
+
+    <div class="card d-flex mr-2 mb-2 justify-content-center" >
+    <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i>{{course.name}}</div>
+   
+    <div class="card-body">
+    
+        <h5 class="card-title">{{ null != course.categories  ? course.categories.name : ''  }}</h5> 
+        <p class="card-text">{{course.content | raw}}</p>
+        <p class="card-text">{{course.description}}</p>
+        
+        <p class="card-text text-center">nombres de vues {{course.numberView}} </p>
+        <p><a  class="btn btn-success {{ user == null ? 'invisible' : ''  }}" href="{{ path('userCourse', {id:course.id}) }}">ajouter à votre liste des cours</a></p>
+        
+    </div>
+    </div>
+</div>
+<div class="container">
+<div id="disqus_thread"></div>
+    <script>
+        (function() { 
+            var d = document, s = d.createElement('script');
+            s.src = 'https://delvet-com.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript><a href="https://disqus.com/?ref_noscript"></a></noscript>
+    <script id="dsq-count-scr" src="//delvet.disqus.com/count.js" async></script>
+</div>
+{% endblock %}

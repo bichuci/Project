@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Professeur!{% endblock %}
+
+{% block body %}
+
+<section class="container mb-5" id="contrib">
+  <h2>Comment devenir contributeur ?</h2>
+  <p>C'est simple il suffit de créer un cours correct</p>
+  <button class="btn btn-lg btn-primary" type="submit" onclick="location.href='{{ path('courses_new') }}';">
+        Devenir contributeur
+  </button>
+</section>
+
+<h2 class="container" id ="liste" >Liste des contributeurs</h2>
+<table class="table table-striped container">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Pseudo</th>
+      <th scope="col">Listes de ses cours</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+{% for contributor in contributors %}
+
+    <tr>
+      <th scope="row">{{ contributor.getUser.getId}}</th>
+      <td>{{ contributor.getUser.getNickname}}</td>
+      <td><a  class="btn go"  href="{{ path('contributorsCourse', {id:contributor.getId} ) }}">voir les cours</a></td>
+     {# {{ path('contributorsCourses') }} #} 
+    </tr>
+    {% endfor %}
+    
+  </tbody>
+</table>
+
+
+
+{% endblock %}
+

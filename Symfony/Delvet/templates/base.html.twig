@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width" />
+        <title>{% block title %}Welcome to Delvet{% endblock %}</title>
+        {% block stylesheets %}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
+        <link rel="stylesheet" href="{{asset('css/style.css')}}">
+        <link rel="stylesheet" href="{{asset('css/user.css')}}">
+        <link href="{{asset('https://fonts.googleapis.com/css?family=Roboto&display=swap')}}" rel="stylesheet">
+
+
+        {% endblock %}
+    </head>
+    <body>
+
+    {% set current_route = app.request.attributes.get('_route') %}
+   
+ <!-- debut de la nav -->
+ <header>
+    <a href="{{ path('home') }}"><img src="/logos/delvet.png" alt=""></a>
+ <nav>
+    <div id="fullnav">
+        <div class="left">
+ 
+              <a href="{{ path('courses') }}" >Cours</a>
+              <a href="{{ path('contributors') }}">Professeurs</a>
+              <a href="{{ path('legal_mentions') }}">A propos</a>
+              <a href="{{ path('user') }}" class="{{ app.user == NULL ? 'invisible' : "" }}">Profil</a>
+              {% if app.user != null %}
+             {% for role in app.user.roles %}
+                {% if role == 'ROLE_ADMIN' %}
+                
+                    <a href="{{ path('easyadmin') }}" >Admin</a>
+                    {# {{ app.user.roles == 'ROLE_PROF' ? 'invisible' : "" }} #}
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+
+        </div>
+        <div class="right">
+        <ul>
+             <button class="btn btn-lg btn-primary {{ app.user != null ? 'invisible' : "" }}" id="leftbtn"  type="submit" onclick="location.href='{{ path('app_register') }}';">
+            S'inscrire
+            </button>
+            <button class="btn btn-lg btn-primary {{ app.user != null ? 'invisible' : "" }}" id = "rightbtn" type="submit" onclick="location.href='{{ path('app_login') }}';">   
+            Se connecter
+            </button>
+             <button class="btn btn-lg btn-primary {{ app.user == null ? 'invisible' : "" }}" id = "rightbtn" type="submit" onclick="location.href='{{ path('app_logout') }}';">   
+            Se déconnecter
+            </button>
+        </ul>
+        </div>
+    </div>
+    
+
+</nav>
+    <div id="searchbar">
+        <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="The Delvet Search !" aria-label="Search">
+      <a href="#"><img src="/logos/search.png" alt=""></a>
+    </form>
+    </div>
+</div>
+</header>
+    {# {{ path('cour') }} #}
+
+    <!-- fin de la nav -->
+
+       
+        {% block body %}{% endblock %}
+<!-- début du footer-->
+
+
+<div class="dropdown">
+    <div class="dropdown-menu">
+        <section class="chat">
+            <div class="messages">
+            </div>
+            <div class="user-inputs">
+                <form class="chatform">
+                    <div id="author"></div>
+                    <input type="text" id="content" name="content" placeholder="Ecrivez votre message ici">
+                    <button type="submit"> Send !</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+  <button type="button" id ="buttonchat"class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Chat
+  </button>
+</div>
+
+
+
+
+    <footer>
+
+        <div id="footer">
+            <div class="first">
+            <h3>Auteurs</h3>
+            <ul>
+                <li>Michel </li>
+                <li>Cedric </li>
+                <li>Anthony </li>
+                <li>Aurélien </li>
+            </ul>
+            </div>
+
+            <div class="third">
+            <h3>Autres</h3>
+            <ul>
+                
+                <li>- Mentions légales </li>
+                <li>- Politique de confidentialité </li>
+                <li>- Charte éditoriale </li>
+               
+            </ul>
+            </div>
+
+            <div class="fourth">
+            <h3>Contactez-nous</h3>
+            <div class="contact">
+            <li><a href="#"><img src="/logos/mail.png"  class="logo"></a></li>
+            <li><a href="#"><img src="/logos/phone.png"  class="logo"></a></li>
+        </div>
+            <div class="social">
+                <h3>Retrouvez notre actualité</h3>
+            <ul>
+                <li><a href="#"><img src="/logos/twitter.png"  class="logo"></a></li>
+                <li><a href="#"><img src="/logos/facebook.png" class="logo"></a></li>
+                <li><a href="#"><img src="/logos/instagram.png" class="logo"></a></li>
+                <li><a href="#"><img src="/logos/youtube.png"  class="logo"></a></li>
+            </ul>
+            </div>
+            </div>
+
+        </div>
+
+    </footer>
+
+        <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+        <script type="text/javascript" src="{{ asset('app/js/app.js') }}"></script>
+    {% block javascripts %}{% endblock %}
+    </body>
+</html>

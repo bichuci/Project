@@ -1,0 +1,32 @@
+#grid {
+    width: 410px;
+    height: 400px;
+}
+#grid .case {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    font-size: 50px;
+    float: left;
+    position: relative;
+    border: 1px solid white;
+}
+#grid .mask {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: black;
+    cursor: pointer;
+}
+#grid .valueCase {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+#grid .hideMask, #grid .found {
+    display: none;
+}

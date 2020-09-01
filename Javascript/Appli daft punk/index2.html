@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0">
+  <title>DAFT PUNK SOUNDBOARD</title>
+  <link rel="stylesheet" href="styleDeux.css">
+</head>
+<body>
+  <header><div class=header>DAFT PUNK SOUNDBOARD</div></header>
+  
+  <div data-key="13" class="beat">
+      <kbd>ENTER</kbd>
+      <span class="sound">Click to backbeat</span>
+  </div>
+  <div data-key="32" class="beat">
+    <kbd>Space</kbd>
+    <span class="sound">Click to backbeat with sound</span>
+</div>
+  <div class="keys">
+      <main>  
+          
+    <!-- PAD DE 4 TOUCHES -->
+    <div data-key="65" class="key">
+      <kbd>A</kbd>
+      <span class="sound">WORK IT</span>
+    </div>
+    <div data-key="90" class="key">
+      <kbd>Z</kbd>
+      <span class="sound">MAKE IT</span>
+    </div>
+    <div data-key="69" class="key">
+      <kbd>E</kbd>
+      <span class="sound">DO IT</span>
+    </div>
+    <div data-key="82" class="key">
+      <kbd>R</kbd>
+      <span class="sound">MAKE US</span>
+    </div>
+  
+    <!-- PAD DE 4 TOUCHES -->
+    <div data-key="81" class="key">
+      <kbd>Q</kbd>
+      <span class="sound">HARDER</span>
+    </div>
+    <div data-key="83" class="key">
+      <kbd>S</kbd>
+      <span class="sound">BETTER</span>
+    </div>
+    <div data-key="68" class="key">
+      <kbd>D</kbd>
+      <span class="sound">FASTER</span>
+    </div>
+    <div data-key="70" class="key">
+      <kbd>F</kbd>
+      <span class="sound">STRONGER</span>
+    </div>
+  
+    <!-- PAD DE 4 TOUCHES -->
+    <div data-key="89" class="key">
+      <kbd>Y</kbd>
+      <span class="sound">MORE THAN</span>
+    </div>
+    <div data-key="85" class="key">
+      <kbd>U</kbd>
+      <span class="sound">HOUR</span>
+    </div>
+    <div data-key="73" class="key">
+      <kbd>I</kbd>
+      <span class="sound">OUR</span>
+    </div>
+    <div data-key="79" class="key">
+      <kbd>O</kbd>
+      <span class="sound">NEVER</span>
+    </div>
+
+    <!-- PAD DE 4 TOUCHES -->
+    <div data-key="72" class="key">
+      <kbd>H</kbd>
+      <span class="sound">EVER</span>
+    </div>
+    <div data-key="74" class="key">
+      <kbd>J</kbd>
+      <span class="sound">AFTER</span>
+    </div>
+    <div data-key="75" class="key">
+      <kbd>K</kbd>
+      <span class="sound">WORK IS</span>
+    </div>
+    <div data-key="76" class="key">
+      <kbd>L</kbd>
+      <span class="sound">OVER</span>
+    </div>
+
+  </div>
+</main> 
+  <audio data-key="32" src="sounds/backBeatWithLyrics.mp3"></audio>
+  <audio data-key="13" src="sounds/backbeat.mp3"></audio>
+  <audio data-key="65" src="sounds/work it.mp3"></audio>
+  <audio data-key="90" src="sounds/make it.mp3"></audio>
+  <audio data-key="69" src="sounds/do it.mp3"></audio>
+  <audio data-key="82" src="sounds/make us.mp3"></audio>
+
+  <audio data-key="81" src="sounds/harderUn.mp3 "></audio>
+  <audio data-key="83" src="sounds/betterUn.mp3 "></audio>
+  <audio data-key="68" src="sounds/fasterUn.mp3 "></audio>
+  <audio data-key="70" src="sounds/strongerUn.mp3"></audio>
+
+  <audio data-key="89" src="sounds/more than.mp3"></audio>
+  <audio data-key="85" src="sounds/hour.mp3"></audio>
+  <audio data-key="73" src="sounds/our.mp3"></audio>
+  <audio data-key="79" src="sounds/never.mp3 "></audio>
+
+  <audio data-key="72" src="sounds/ever.mp3"></audio>
+  <audio data-key="74" src="sounds/after.mp3"></audio>
+  <audio data-key="75" src="sounds/work is.mp3"></audio>
+  <audio data-key="76" src="sounds/over.mp3"></audio>
+
+
+<script>
+  function removeTransition(e) {
+    if (e.propertyName !== 'transform') return;
+    e.target.classList.remove('playing');
+  }
+
+  function playSound(e) {
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+    const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+    if (!audio) return;
+
+    key.classList.add('playing');
+    audio.currentTime = 0;
+    audio.play();
+  }
+
+  const keys = Array.from(document.querySelectorAll('.key'));
+  keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+  window.addEventListener('keydown', playSound);
+</script>
+
+
+</body>
+</html>
